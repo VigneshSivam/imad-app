@@ -76,7 +76,7 @@ app.get('/', function (req, res) {
 
 app.get('/blockName', function (req, res) {
   var blockname = req.params.blockName;
-  res.send(createTemp(blocks[blockName]));
+  res.send(createTemp(blocks[blockname]));
 });
 
 
