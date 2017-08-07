@@ -14,19 +14,19 @@ app.get('/block1', function (req, res) {
 });
 
 app.get('/block2', function (req, res) {
-  res.send("Block 2 will be served here");
+  res.sendFile(path.join(__dirname, 'ui', 'block2.html'));
 });
 
 app.get('/block3', function (req, res) {
-  res.send("Block 3 will be served here");
+  res.sendFile(path.join(__dirname, 'ui', 'block3.html'));
 });
 
 app.get('/block4', function (req, res) {
-  res.send("Block 4 will be served here");
+  res.sendFile(path.join(__dirname, 'ui', 'block4.html'));
 });
 
 app.get('/block5', function (req, res) {
-  res.send("Block 5 will be served here");
+  res.sendFile(path.join(__dirname, 'ui', 'block5.html'));
 });
 
 app.get('/ui/style.css', function (req, res) {
