@@ -21,7 +21,7 @@ function createTemp(data) {
     var date = data.date;
     var content = data.content;
     
-    var htmpTemp =`
+    var htmlTemp =`
         <html>
             <head>
                 <title>
