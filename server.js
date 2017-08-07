@@ -21,7 +21,7 @@ function createTemp(data) {
     var date = data.date;
     var content = data.content;
     
-    var htmpTemp = `
+    var htmpTemp =`
         <html>
             <head>
                 <title>
@@ -44,9 +44,6 @@ function createTemp(data) {
                     ${content}
                 </div>
             </body>
-                    
-                
-                
         </html>
         `;
         return htmlTemp;
