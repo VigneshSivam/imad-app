@@ -10,23 +10,23 @@ app.get('/', function (req, res) {
 });
 
 app.get('/block1', function (req, res) {
-  res.send("Block 1 will be served here")
+  res.send("Block 1 will be served here");
 });
 
 app.get('/block2', function (req, res) {
-  res.send("Block 2 will be served here")
+  res.send("Block 2 will be served here");
 });
 
 app.get('/block3', function (req, res) {
-  res.send("Block 3 will be served here")
+  res.send("Block 3 will be served here");
 });
 
 app.get('/block4', function (req, res) {
-  res.send("Block 4 will be served here")
+  res.send("Block 4 will be served here");
 });
 
 app.get('/block5', function (req, res) {
-  res.send("Block 5 will be served here")
+  res.send("Block 5 will be served here");
 });
 
 app.get('/ui/style.css', function (req, res) {
