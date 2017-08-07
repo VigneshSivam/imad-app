@@ -74,7 +74,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/blockName', function (req, res) {
+app.get('/:blockName', function (req, res) {
   var blockName = req.params.blockName;
   res.send(createTemp(blocks[blockName]));
 });
