@@ -5,29 +5,61 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var content1 = {
+    title: "Block1 | Vignesh Sivam",
+    date: "7th of Aug 2017",
+    heading: "Block 1",
+    content: `
+    <p> 
+        I did a blender mistake while editing and delting, so i should think b4 any deleting operation thrice
+    </p>`
+};
+
+function createTemp(data) {
+    var title = data.title;
+    var heading = data.heading;
+    var date = data.date;
+    var content = data.content;
+    
+    var htmpTemp = `
+        <html>
+            <head>
+                <title>
+                    ${title}
+                </title>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+            </head>
+            <body>
+                <div>
+                    <a href="/">Home</a>
+                </div>
+                <hr/>
+                <h3>
+                    ${heading}
+                </h3>
+                <div>
+                    ${date}
+                </div>
+                <div>
+                    ${content}
+                </div>
+            </body>
+                    
+                
+                
+        </html>
+        `;
+        return htmlTemp;
+}
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/block1', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'block1.html'));
+  res.send(createTemp(content1));
 });
 
-app.get('/block2', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'block2.html'));
-});
-
-app.get('/block3', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'block3.html'));
-});
-
-app.get('/block4', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'block4.html'));
-});
-
-app.get('/block5', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'block5.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
