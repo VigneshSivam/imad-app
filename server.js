@@ -4,8 +4,8 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-
-var content1 = {
+var blocks = {
+   'block1': {
     title: "Block1 | Vignesh Sivam",
     date: "7th of Aug 2017",
     heading: "Block 1",
@@ -13,7 +13,27 @@ var content1 = {
     <p> 
         I did a blender mistake while editing and delting, so i should think b4 any deleting operation thrice
     </p>`
+    },
+   'block2': {
+    title: "Block2 | Vignesh Sivam",
+    date: "8th of Aug 2017",
+    heading: "Block 2",
+    content: `
+    <p> 
+        I did a blender mistake while editing and delting, so i should think b4 any deleting operation thrice
+    </p>`
+    },
+   'block3': {
+    title: "Block3 | Vignesh Sivam",
+    date: "9th of Aug 2017",
+    heading: "Block 3",
+    content: `
+    <p> 
+        I did a blender mistake while editing and delting, so i should think b4 any deleting operation thrice
+    </p>`
+    }
 };
+
 
 function createTemp(data) {
     var title = data.title;
@@ -54,8 +74,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/block1', function (req, res) {
-  res.send(createTemp(content1));
+app.get('/blockName', function (req, res) {
+  var blockname = req.params.blockName;
+  res.send(createTemp(blocks[blockName]));
 });
 
 
