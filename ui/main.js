@@ -29,4 +29,4 @@ button.onclick = function() {
     var span = document.getElementById('count');
     span.innerHtml = counter.toString();
     
-}
+};
