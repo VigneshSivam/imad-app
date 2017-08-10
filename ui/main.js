@@ -16,6 +16,6 @@ button.onclick = function() {
         }
     };
     
-    req.open('GET', '//http://ecomvicky.imad.hasura-app.io/counter', true);
+    req.open('GET', 'http://ecomvicky.imad.hasura-app.io/counter', true);
     req.send(null);
 };
