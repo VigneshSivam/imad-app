@@ -20,8 +20,7 @@ button.onclick = function() {
     req.send(null);
 };
 
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
+
 var submit = document.getElementById('submit_btn')
 
 submit.onclick = function() {
@@ -44,6 +43,8 @@ submit.onclick = function() {
             }
         }
     };
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value;
     req.open('GET', 'http://ecomvicky.imad.hasura-app.io/submit-name?name=' + name, true);
     req.send(null);
     
