@@ -81,19 +81,21 @@ app.get('/counter', function(req, res){
     res.send(counter.toString());
 });
 
-app.get('/:blockName', function (req, res) {
-  var blockName = req.params.blockName;
-  res.send(createTemp(blocks[blockName]));
-});
-
 var names = [];
-app.get('/submit-name/:name', function(req, res) {
-    var name = req.params.name;
+app.get('/submit-name', function(req, res) {
+    var name = req.query.name;
     
     names.push(name);
     //JSON: JS object notation 
     res.send(JSON.stringify(names));
 })
+
+app.get('/:blockName', function (req, res) {
+  var blockName = req.params.blockName;
+  res.send(createTemp(blocks[blockName]));
+});
+
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
