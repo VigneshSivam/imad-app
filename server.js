@@ -5,9 +5,9 @@ var Pool = require('pg').Pool;
 var config = {
     user: 'ecomvicky',
     database: 'ecomvicky',
-    host: 'db.imad.hasura-app.io',
+    host: 'localhost',
     port: '5432',
-    password: "db-ecomvicky-53977"
+    password: 'db-ecomvicky-53977'
 };
 
 
