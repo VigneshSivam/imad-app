@@ -111,9 +111,21 @@ app.get('/submit-name', function(req, res) {
     res.send(JSON.stringify(names));
 })
 
-app.get('/:blockName', function (req, res) {
+app.get('/articles/:blockName', function (req, res) {
   var blockName = req.params.blockName;
-  res.send(createTemp(blocks[blockName]));
+  pool.query("SELECT * FROM article WHERE title = '" + blockName + "'", function(err, result) {
+     if(err) {
+         res.status(500).send(err.toString());
+     } else {
+         if (result.rows.length === 0) {
+             res.status(404).send('Article not found');
+         } else {
+             var articleData = result.rows[0];
+             res.send(createTemp(articleData));
+         }
+     }
+  });
+  
 });
 
 
