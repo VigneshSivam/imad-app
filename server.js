@@ -7,7 +7,7 @@ var config = {
     database: 'ecomvicky',
     host: 'db.imad.hasura-app.io',
     port: '5432',
-    password: 'db-ecomvicky-53977'
+    password: "db-ecomvicky-53977"
 };
 
 
