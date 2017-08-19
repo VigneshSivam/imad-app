@@ -113,7 +113,9 @@ app.get('/submit-name', function(req, res) {
 
 app.get('/articles/:blockName', function (req, res) {
   var blockName = req.params.blockName;
-  pool.query("SELECT * FROM article WHERE title = '" + blockName + "'", function(err, result) {
+  // /articles/'; DELETE from "article" where 'a'='a'
+  //pool.query("SELECT * FROM article WHERE title = '" + blockName + "'", function(err, result) {
+  pool.query("SELECT * FROM article WHERE title = $1", [blockName], function(err, result) {
      if(err) {
          res.status(500).send(err.toString());
      } else {
