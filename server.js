@@ -31,7 +31,7 @@ app.get('/test-db', function(err,res) {
 });
 var blocks = {
    'block1': {
-    title: 'Block1 | Vignesh Sivam',
+    title: "Block1 | Vignesh Sivam",
     date: "7th of Aug 2017",
     heading: "Block 1",
     content: `
