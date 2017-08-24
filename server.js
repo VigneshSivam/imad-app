@@ -74,15 +74,14 @@ app.post('/login', function(req, res){
                if (hasedPassword === dbString) {
                      //session 
                     req.session.auth = {userId: result.rows[0].id};
-                    
-                   res.send('Welcome buddy!!!');
+                    res.send('Welcome buddy!!!');
                    
-               } else {
+                } else {
                   res.send(403).send('Password is not correct');
-              }
-          }
-      }
-   });
+                }
+           }
+        }
+    });
 });
 
 app.get('/check-login', function(req, res){
