@@ -31,22 +31,22 @@ submit.onclick = function() {
     req.onreadystatechange = function () {
         if (req.readyState === XMLHttpRequest.DONE) {
             if (req.status === 200) {
-                //Capture list 
-                var names = req.responseText;
-                names = JSON.parse(names);
-                var list = '';
-                for (var i=0; i<names.length; i++) {
-                    list += '<li>' + names[i] + '</li>';
-                }
-                var ul = document.getElementById('namelist');
-                ul.innerHTML = list;
-            }
+                console.log('Logged in successfully');
+                alert('User logged in successfully');
+            } else if (req.status === 403){
+                alert('Invalid credentials');
+            } else if (req.status === 500){
+                alert('Something wrong');
+            } 
         }
     };
-    var nameInput = document.getElementById('name');
-    var name = nameInput.value;
-    req.open('GET', 'http://ecomvicky.imad.hasura-app.io/submit-name?name=' + name, true);
-    req.send(null);
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    console.log(username);
+    console.log(password);
+    req.open('POST', 'http://ecomvicky.imad.hasura-app.io/login', true);
+    req.setRequestHeader('Content-Type', 'application/json');
+    req.send(JSON.stringify({username: username, password: password}));
     
     
 };
