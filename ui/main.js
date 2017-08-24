@@ -25,6 +25,4 @@ submit.onclick = function() {
     req.open('POST', 'http://ecomvicky.imad.hasura-app.io/login', true);
     req.setRequestHeader('Content-Type', 'application/json');
     req.send(JSON.stringify({username: username, password: password}));
-    
-    
 };
