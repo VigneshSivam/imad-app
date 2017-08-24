@@ -52,7 +52,7 @@ app.post('/create-user', function(req, res){
 
 app.post('/login', function(req, res){
    //Username and password
-   // {"username": "Vignesh Sivam", "password": "password"}
+   // {"username": "VigneshSivam", "password": "password"}
    // JSON
    var username = req.body.username;
    var password = req.body.password;
